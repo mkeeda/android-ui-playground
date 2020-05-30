@@ -1,16 +1,19 @@
 package io.github.mkeeda.androiduiplayground.ui.main
 
 import android.os.Bundle
+import androidx.navigation.fragment.findNavController
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import io.github.mkeeda.androiduiplayground.R
 
 class MainFragment : PreferenceFragmentCompat() {
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences_playground, rootKey)
+
+        val imagePreview = findPreference<Preference>("imagePreview")
+        imagePreview?.setOnPreferenceClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_imagePreviewFragment)
+            true
+        }
     }
 }

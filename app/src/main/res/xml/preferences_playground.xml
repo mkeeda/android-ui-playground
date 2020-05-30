@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
-        app:key="feedback"
+        app:key="imagePreview"
         app:title="Image Preview"
         app:summary="Preview UI of image like twitter app"/>
 
