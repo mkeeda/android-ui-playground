@@ -1,12 +1,10 @@
 package io.github.mkeeda.androiduiplayground.ui.imagepreview
 
 import android.content.Context
-import android.graphics.Matrix
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.graphics.values
 import kotlin.math.max
 import kotlin.math.min
 
@@ -21,19 +19,15 @@ class ZoomableImageView @JvmOverloads constructor(
             // Don't let the object get too small or too large.
             val scaleFactor = max(0.1f, min(detector.scaleFactor, 5.0f))
 
-            zoom(scaleFactor)
+            zoom(scaleFactor, detector.focusX, detector.focusY)
             return true
         }
     }
 
     private val scaleDetector = ScaleGestureDetector(context, scaleListener)
 
-    private fun zoom(scale: Float) {
-        println("⭐: $scale")
-        val values = imageMatrix.values()
-        values[Matrix.MSCALE_X] *= scale
-        values[Matrix.MSCALE_Y] *= scale
-        imageMatrix.setValues(values)
+    private fun zoom(scale: Float, focusX: Float, focusY: Float) {
+        imageMatrix.postScale(scale, scale, focusX, focusY)
         invalidate()
     }
 
