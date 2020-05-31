@@ -14,14 +14,6 @@ class ImagePreviewFragment : Fragment(R.layout.image_preview_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = ImagePreviewFragmentBinding.bind(view)
-
-        binding.inButton.setOnClickListener {
-            binding.imageView.zoom(scale = 2.0f)
-        }
-
-        binding.outButton.setOnClickListener {
-            binding.imageView.zoom(scale = 0.5f)
-        }
     }
 
     override fun onDestroyView() {
