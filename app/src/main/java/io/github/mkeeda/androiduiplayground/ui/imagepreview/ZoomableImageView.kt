@@ -32,8 +32,8 @@ class ZoomableImageView @JvmOverloads constructor(
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        // Let the ScaleGestureDetector inspect all events.
         scaleDetector.onTouchEvent(event)
+        scaleDetector.isQuickScaleEnabled = true
         return true
     }
 }
