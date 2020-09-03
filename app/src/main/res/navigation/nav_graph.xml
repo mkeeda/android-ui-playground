@@ -2,6 +2,7 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
 
@@ -12,11 +13,19 @@
         <action
             android:id="@+id/action_mainFragment_to_imagePreviewFragment"
             app:destination="@id/imagePreviewFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_youtubeFragment"
+            app:destination="@id/youtubeFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/imagePreviewFragment"
         android:name="io.github.mkeeda.androiduiplayground.ui.imagepreview.ImagePreviewFragment"
         android:label="ImagePreviewFragment" />
+    <fragment
+        android:id="@+id/youtubeFragment"
+        android:name="io.github.mkeeda.androiduiplayground.ui.youtubeplayer.YoutubeFragment"
+        android:label="fragment_youtube"
+        tools:layout="@layout/fragment_youtube" />
 
 </navigation>
