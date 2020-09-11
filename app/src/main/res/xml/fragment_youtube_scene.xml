@@ -17,8 +17,21 @@
                 motion:framePosition="20"
                 motion:keyPositionType="parentRelative"
                 motion:percentWidth="1"
-                motion:percentX="1"
-                />
+                motion:percentX="1" />
+
+            <KeyPosition
+                motion:motionTarget="@+id/movie_title"
+                motion:framePosition="20"
+                motion:keyPositionType="parentRelative"
+                motion:percentWidth="1"
+                motion:percentX="1" />
+
+            <KeyPosition
+                motion:motionTarget="@+id/play_button"
+                motion:framePosition="20"
+                motion:keyPositionType="parentRelative"
+                motion:percentWidth="1"
+                motion:percentX="1" />
         </KeyFrameSet>
     </Transition>
 
@@ -40,13 +53,21 @@
             motion:layout_constraintStart_toStartOf="@id/playerBackground" />
 
         <Constraint
+            android:id="@+id/movie_title"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toEndOf="@id/movie"
+            motion:layout_constraintEnd_toStartOf="@id/play_button" />
+
+        <Constraint
             android:id="@+id/play_button"
             android:alpha="1.0"
             android:layout_height="56dp"
             motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
             motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
-            motion:layout_constraintEnd_toEndOf="@id/playerBackground"
-            motion:layout_constraintTop_toTopOf="@id/playerBackground" />
+            motion:layout_constraintStart_toEndOf="@id/movie_title"
+            motion:layout_constraintEnd_toEndOf="@id/playerBackground" />
 
         <Constraint
             android:id="@+id/movie_content"
@@ -84,12 +105,22 @@
             android:layout_height="wrap_content" />
 
         <Constraint
+            android:id="@+id/movie_title"
+            android:alpha="0.0"
+            motion:layout_constraintWidth_min="0dp"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toEndOf="@id/movie"
+            motion:layout_constraintEnd_toStartOf="@id/play_button" />
+
+        <Constraint
             android:id="@+id/play_button"
             android:alpha="0.0"
             android:layout_height="56dp"
-            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintWidth_min="0dp"
             motion:layout_constraintTop_toTopOf="@id/playerBackground"
             motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toEndOf="@id/movie_title"
             motion:layout_constraintEnd_toEndOf="@id/playerBackground" />
 
     </ConstraintSet>
