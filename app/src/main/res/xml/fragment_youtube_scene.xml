@@ -28,9 +28,8 @@
 
             <KeyPosition
                 motion:motionTarget="@+id/play_button"
-                motion:framePosition="20"
-                motion:keyPositionType="parentRelative"
-                motion:percentWidth="1"
+                motion:framePosition="30"
+                motion:keyPositionType="deltaRelative"
                 motion:percentX="1" />
         </KeyFrameSet>
     </Transition>
@@ -117,11 +116,10 @@
             android:id="@+id/play_button"
             android:alpha="0.0"
             android:layout_height="56dp"
-            motion:layout_constraintWidth_min="0dp"
+            motion:layout_constraintDimensionRatio="1:1"
             motion:layout_constraintTop_toTopOf="@id/playerBackground"
             motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
-            motion:layout_constraintStart_toEndOf="@id/movie_title"
-            motion:layout_constraintEnd_toEndOf="@id/playerBackground" />
+            motion:layout_constraintStart_toEndOf="@id/playerBackground" />
 
     </ConstraintSet>
 </MotionScene>
