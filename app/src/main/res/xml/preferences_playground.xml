@@ -7,4 +7,9 @@
         app:title="Image Preview"
         app:summary="Preview UI of image like twitter app"/>
 
+    <Preference
+        app:key="youtubePlayerAnimation"
+        app:title="Youtube Player Animation"
+        app:summary="Swipe animation of youtube player view using motion layout"/>
+
 </PreferenceScreen>

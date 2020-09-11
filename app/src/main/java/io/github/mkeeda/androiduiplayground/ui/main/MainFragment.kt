@@ -10,9 +10,13 @@ class MainFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences_playground, rootKey)
 
-        val imagePreview = findPreference<Preference>("imagePreview")
-        imagePreview?.setOnPreferenceClickListener {
+        findPreference<Preference>("imagePreview")?.setOnPreferenceClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_imagePreviewFragment)
+            true
+        }
+
+        findPreference<Preference>("youtubePlayerAnimation")?.setOnPreferenceClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_youtubeFragment)
             true
         }
     }
