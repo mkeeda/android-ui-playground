@@ -11,6 +11,15 @@
             motion:touchAnchorSide="top"
             motion:dragDirection="dragUp"
             />
+        <KeyFrameSet >
+            <KeyPosition
+                motion:motionTarget="@+id/movie"
+                motion:framePosition="20"
+                motion:keyPositionType="parentRelative"
+                motion:percentWidth="1"
+                motion:percentX="1"
+                />
+        </KeyFrameSet>
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -29,6 +38,15 @@
             motion:layout_constraintTop_toTopOf="@id/playerBackground"
             motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
             motion:layout_constraintStart_toStartOf="@id/playerBackground" />
+
+        <Constraint
+            android:id="@+id/play_button"
+            android:alpha="1.0"
+            android:layout_height="56dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintEnd_toEndOf="@id/playerBackground"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground" />
 
         <Constraint
             android:id="@+id/movie_content"
@@ -64,6 +82,15 @@
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <Constraint
+            android:id="@+id/play_button"
+            android:alpha="0.0"
+            android:layout_height="56dp"
+            motion:layout_constraintDimensionRatio="1:1"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintEnd_toEndOf="@id/playerBackground" />
 
     </ConstraintSet>
 </MotionScene>
