@@ -11,24 +11,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/playerBackground"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@id/movie_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="0dp"
+        android:background="#FFFFFF" />
 
-        <ImageView
-            android:id="@+id/movie"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="@id/playerBackground"
-            app:layout_constraintBottom_toBottomOf="@id/playerBackground"
-            app:layout_constraintStart_toStartOf="@id/playerBackground"
-            app:layout_constraintDimensionRatio="H,1:2"
-            app:srcCompat="@drawable/sample_image" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/sample_image" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movie_content"
@@ -36,8 +27,5 @@
         android:layout_height="0dp"
         android:text="@string/long_text"
         android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         />
 </androidx.constraintlayout.motion.widget.MotionLayout>

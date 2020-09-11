@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        app:constraintSetEnd="@id/end"
-        app:constraintSetStart="@+id/start">
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@+id/start">
 
         <OnSwipe
             motion:touchAnchorId="@id/playerBackground"
@@ -18,22 +17,25 @@
         <Constraint
             android:id="@+id/playerBackground"
             android:layout_height="56dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent" />
 
         <Constraint
             android:id="@+id/movie"
-            app:layout_constraintTop_toTopOf="@id/playerBackground"
-            app:layout_constraintBottom_toBottomOf="@id/playerBackground"
-            app:layout_constraintStart_toStartOf="@id/playerBackground" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="H,1:2"
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toStartOf="@id/playerBackground" />
 
         <Constraint
             android:id="@+id/movie_content"
-            app:layout_constraintTop_toBottomOf="@id/playerBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
             android:layout_height="0dp" />
 
     </ConstraintSet>
@@ -41,27 +43,25 @@
     <ConstraintSet android:id="@+id/end">
         <Constraint
             android:id="@+id/playerBackground"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/movie_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/movie_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
             android:layout_height="320dp"
             android:layout_width="0dp" />
 
         <Constraint
             android:id="@+id/movie"
-            app:layout_constraintTop_toTopOf="@id/playerBackground"
-            app:layout_constraintBottom_toBottomOf="@id/playerBackground"
-            app:layout_constraintStart_toStartOf="@id/playerBackground"
-            app:layout_constraintEnd_toEndOf="@id/playerBackground"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
+            motion:layout_constraintTop_toTopOf="@id/playerBackground"
+            motion:layout_constraintBottom_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toStartOf="@id/playerBackground"
+            motion:layout_constraintEnd_toEndOf="@id/playerBackground" />
 
         <Constraint
             android:id="@+id/movie_content"
-            app:layout_constraintTop_toBottomOf="@id/playerBackground"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/playerBackground"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
